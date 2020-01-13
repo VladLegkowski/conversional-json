@@ -5,6 +5,7 @@ import { ModalContextConsumer } from '../../modal-context';
 const BASE_MODAL = 'baseModal';
 
 function ButtonComponent(props) {
+  console.log(props)
   const [modal, setModal] = useState(null);
   useEffect(() => {
     setModal(props.modalName)
@@ -22,7 +23,7 @@ function ButtonComponent(props) {
     return(
       <Box>
         <Button
-          variantColor="green"
+          variantColor="teal"
           onClick={() => console.log('I Am Normal Button')}>{props.text}</Button>
       </Box>
     )

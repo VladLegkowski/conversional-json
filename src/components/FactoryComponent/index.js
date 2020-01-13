@@ -1,5 +1,5 @@
 import React from 'react';
-import {componentConfig} from '../../data-client';
+import { componentConfig } from '../../data-client';
 
 function FactoryComponent({ data }) {
   const { type, children, props } = data;

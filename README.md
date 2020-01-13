@@ -1,68 +1,90 @@
+# Conversional-json App
+
+![UI](conversional-ui.png "UI")
+
 This project was bootstrapped with [Create React Index](https://github.com/facebook/create-react-app).
+
+## Prerequisites
+
+- node8
+- yarn
+
+## Install
+
+1. Clone this repository.
+2. Run `yarn`.
+
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+## Running the application
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Run `yarn start` to start the client.
+3. Check it out under:  `http://localhost:3000`.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Solution
 
-### `yarn test`
+### Project structure
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project consists of two directories and the helper files.
 
-### `yarn build`
+#### `src`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Source directory composed of three sub-directories: `data-client`, `modal-context` and `components`.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### `public`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Public files for the project.
 
-### `yarn eject`
+### Approach
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Data-client stores two JSON files, which represent two different pages in application.
+* First view of the application lets a user decide, what page to view.
+* Based on the selected JSON file, the FactoryComponent (`src/components/FactoryComponent/`) creates a page based on JSON data in the selected file.
+* The application UI is built with the `chakra-UI` React component library.
+* Testing is completed with `Jest` and `@testing-library/react`. The following components were tested, for showcase purposes:
+    - [x] Actions (`src/common/actions/__tests__/actions.js`),
+    - [x] Reducers (`src/common/reducers/__tests__/reducers.js`),
+    - [x] Data-service index (`src/data-service/index/__tests__/index.js`),
+    - [x] HomePage component (`src/components/pages/homepage/ui/__tests__/HomePage.js`),
+    - [x] Spinner component (`src/components/Spinner/__tests__/Spinner.js`),
+* The testing in this solution includes only unit tests. That could be extended with component, integration, and e2e for
+a production-ready product.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Additional requirements
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* In order to distinguish the behavior of the link and the button components, JSON file for each component should contain the `modalName` field with the name of the modal, such as:
+```json
+          {
+            "type": "BUTTON_COMPONENT",
+            "id": "sadasdiqeo1u211",
+            "props": {
+              "modalName": "baseModal",
+              "text": "Click me to open the modal"
+            }
+          },
+          {
+            "type": "LINK_COMPONENT",
+            "id": "sdasidj98394",
+            "props": {
+              "modalName": "urlModal",
+              "url": "https://lmgtfy.com/",
+              "text": "I open a link but I should also open the modal."
+            }
+          },
+```
+* Based on this field, the component renders with the desired behaviour.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Libs/tools used
 
-## Learn More
+* [ES8](https://www.ecma-international.org/ecma-262/8.0/)
+* [React](https://facebook.github.io/react/)
+* [Chakra UI](https://chakra-ui.com/)
+* [Jest](http://facebook.github.io/jest/)
+* [React Testing Library](https://testing-library.com/)
 
-You can learn more in the [Create React Index documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web Index
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The MIT License (MIT)

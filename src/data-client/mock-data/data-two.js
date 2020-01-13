@@ -21,19 +21,28 @@ const dataTwo = {
             }
           },
           {
-            "type": "BUTTON_COMPONENT",
-            "id": "asdwe123das5642",
-            "props": {
-              "text": "I am normal button"
-            }
-          },
-          {
             "type": "LINK_COMPONENT",
             "id": "sdasidj98394",
             "props": {
               "modalName": "urlModal",
               "url": "https://lmgtfy.com/",
               "text": "I open a link but I should also open the modal."
+            }
+          },
+        ],
+      },
+      {
+        "type": "BOX_COMPONENT",
+        "id": "sdas123213sdsa",
+        "props": {
+          "borderSize": "1px"
+        },
+        "children": [
+          {
+            "type": "BUTTON_COMPONENT",
+            "id": "asdwe123das5642",
+            "props": {
+              "text": "I am normal button"
             }
           },
           {
