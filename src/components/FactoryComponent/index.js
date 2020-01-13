@@ -6,18 +6,18 @@ function FactoryComponent({ data }) {
   const Page = componentConfig[type];
   const views = children.map(component => {
     const View = componentConfig[component.type];
-    const pProps = component.props;
+    const vProps = component.props;
     const components = !component.children ? [] : component.children.map((child) => {
-      const Child = componentConfig[child.type];
+      const Component = componentConfig[child.type];
       const cProps = child.props;
       return(
-        <Child key={child.id} {...cProps} />
+        <Component key={child.id} {...cProps} />
       )
     });
     return(
       <View
         key={component.id}
-        {...pProps}
+        {...vProps}
       >
         {components.map(view => view)}
       </View>
