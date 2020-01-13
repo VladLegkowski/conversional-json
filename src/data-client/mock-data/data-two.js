@@ -16,15 +16,32 @@ const dataTwo = {
             "type": "BUTTON_COMPONENT",
             "id": "sadasdiqeo1u211",
             "props": {
+              "modalName": "baseModal",
               "text": "Click me to open the modal"
+            }
+          },
+          {
+            "type": "BUTTON_COMPONENT",
+            "id": "asdwe123das5642",
+            "props": {
+              "text": "I am normal button"
             }
           },
           {
             "type": "LINK_COMPONENT",
             "id": "sdasidj98394",
             "props": {
+              "modalName": "urlModal",
               "url": "https://lmgtfy.com/",
               "text": "I open a link but I should also open the modal."
+            }
+          },
+          {
+            "type": "LINK_COMPONENT",
+            "id": "weqw131123dasad",
+            "props": {
+              "url": "https://resume.io/r/xAh364Zkf",
+              "text": "I am a normal Link component."
             }
           },
         ],
