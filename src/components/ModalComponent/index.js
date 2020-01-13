@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay} from '@chakra-ui/core';
+import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay } from '@chakra-ui/core';
 import { ModalContextConsumer } from '../../modal-context';
 
 function ModalComponent(props) {

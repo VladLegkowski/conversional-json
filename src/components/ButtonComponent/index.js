@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Box, Button} from '@chakra-ui/core';
+import { Box, Button } from '@chakra-ui/core';
 import { ModalContextConsumer } from '../../modal-context';
 
 const BASE_MODAL = 'baseModal';
@@ -22,7 +22,7 @@ function ButtonComponent(props) {
     return(
       <Box>
         <Button
-          variantColor="blue"
+          variantColor="green"
           onClick={() => console.log('I Am Normal Button')}>{props.text}</Button>
       </Box>
     )

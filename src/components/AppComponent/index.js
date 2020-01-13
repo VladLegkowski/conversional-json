@@ -8,7 +8,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/core';
 import { ModalContextProvider } from '../../modal-context';
-import { dataOne, dataTwo } from '../../data-client';
+import { dataOne, dataTwo } from '../../data-client/mock-data';
 import { FactoryComponent } from '../FactoryComponent';
 import { H1Component } from '../H1Component';
 import './App.css';

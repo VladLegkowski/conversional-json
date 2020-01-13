@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {Box, Icon, Link} from '@chakra-ui/core';
-import {ModalContextConsumer} from '../../modal-context/ModalContextConsumer';
+import { Box, Icon, Link } from '@chakra-ui/core';
+import { ModalContextConsumer } from '../../modal-context/ModalContextConsumer';
 
 const URL_MODAL = 'urlModal';
 
@@ -21,7 +21,7 @@ function LinkComponent(props) {
     }
     return(
       <Box>
-        <Link color="blue.500" href={props.url} isExternal>
+        <Link color="gray.500" href={props.url} isExternal>
           {props.text} <Icon name="external-link" mx="2px" />
         </Link>
       </Box>
