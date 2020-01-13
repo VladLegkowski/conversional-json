@@ -3,28 +3,27 @@ import {Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay} from '@c
 import { ModalContextConsumer } from '../../modal-context';
 
 function ModalComponent(props) {
+  function renderModalComponent(value) {
+    return(
+      <Modal
+        isOpen={value.isOpen}
+        onClose={value.onClose}
+      >
+        <ModalOverlay />
+        <ModalContent
+          minW={props.width}
+          minH={props.height}
+        >
+          <ModalCloseButton />
+          <ModalBody>
+            {props.children}
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    )
+  }
   return (
-    <ModalContextConsumer>
-      {value => (
-          <Modal
-            isOpen={value.isOpen}
-            onClose={value.onClose}
-          >
-            <ModalOverlay />
-            <ModalContent
-              minW={props.width}
-              minH={props.height}
-            >
-              <ModalCloseButton />
-              <ModalBody>
-                {props.children}
-              </ModalBody>
-            </ModalContent>
-          </Modal>
-        )
-      }
-
-    </ModalContextConsumer>
+    <ModalContextConsumer>{value => renderModalComponent(value)}</ModalContextConsumer>
   )
 }
 
