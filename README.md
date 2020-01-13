@@ -74,6 +74,41 @@ a production-ready product.
 ```
 * Based on this field, the component renders with the desired behaviour.
 
+### JSON structure
+* Changed children from object to an array to guarantee an order
+* Renamed component types
+* Added ID's
+
+```json
+{
+    "type": "BOX_COMPONENT",
+    "id": "2wesqd921sdqsa",
+    "children": [
+      {
+        "type": "H1_COMPONENT",
+        "id": "wqeddxdsaio2312ds",
+        "props": {
+          "text": "Our benefits"
+        }
+      },
+      {
+        "type": "H2_COMPONENT",
+        "id": "smdasjnjashdu230349",
+        "props": {
+          "text": "This is why you will love our product"
+        }
+      },
+      {
+        "type": "LIST_COMPONENT",
+        "id": "dsailkandhys7820",
+        "props": {
+          "li": ["free to use", "superfast", "and pretty, too!"]
+        }
+      }
+    ]
+}
+```
+
 ### Libs/tools used
 
 * [ES8](https://www.ecma-international.org/ecma-262/8.0/)
