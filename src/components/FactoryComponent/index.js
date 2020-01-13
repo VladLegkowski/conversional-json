@@ -4,20 +4,20 @@ import {componentConfig} from '../../data-client';
 function FactoryComponent({ data }) {
   const { type, children, props } = data;
   const Page = componentConfig[type];
-  const views = children.map(component => {
-    const View = componentConfig[component.type];
-    const vProps = component.props;
-    const components = !component.children ? [] : component.children.map((child) => {
-      const Component = componentConfig[child.type];
-      const cProps = child.props;
+  const views = children.map(view => {
+    const View = componentConfig[view.type];
+    const pProps = view.props;
+    const components = !view.children ? [] : view.children.map((component) => {
+      const Component = componentConfig[component.type];
+      const cProps = component.props;
       return(
-        <Component key={child.id} {...cProps} />
+        <Component key={component.id} {...cProps} />
       )
     });
     return(
       <View
-        key={component.id}
-        {...vProps}
+        key={view.id}
+        {...pProps}
       >
         {components.map(view => view)}
       </View>
