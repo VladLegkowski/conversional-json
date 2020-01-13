@@ -45,11 +45,8 @@ Public files for the project.
 * Based on the selected JSON file, the FactoryComponent (`src/components/FactoryComponent/`) creates a page based on JSON data in the selected file.
 * The application UI is built with the `chakra-UI` React component library.
 * Testing is completed with `Jest` and `@testing-library/react`. The following components were tested, for showcase purposes:
-    - [x] Actions (`src/common/actions/__tests__/actions.js`),
-    - [x] Reducers (`src/common/reducers/__tests__/reducers.js`),
-    - [x] Data-service index (`src/data-service/index/__tests__/index.js`),
-    - [x] HomePage component (`src/components/pages/homepage/ui/__tests__/HomePage.js`),
-    - [x] Spinner component (`src/components/Spinner/__tests__/Spinner.js`),
+    - [x] FactoryComponent (Snapshots) (`src/components/FactoryComponent/FactoryComponent.test.js`),
+    - [x] ButtonComponent (Assertions) (`src/components/ButtonComponent/ButtonComponent.test.js`),
 * The testing in this solution includes only unit tests. That could be extended with component, integration, and e2e for
 a production-ready product.
 
